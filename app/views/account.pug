@@ -1,0 +1,8 @@
+extends layout
+
+
+block content
+    h1= title
+    img.img(src=user.photos[2].value alt='login')
+    p Steam ID is = #{user.id}
+    p Steam Name = #{user.displayName}

@@ -1,5 +1,11 @@
 extends layout
 
+
 block content
   h1= title
-  p Welcome to #{title}, future home of the best csgo retakes.
+  if user
+    p Welcome to #{user.displayName} to #{title}, future home of the best csgo retakes.
+    p Would you like to #[a( href='/logout' ) logout] or #[a( href='/account' ) view account]?
+  else
+    p Welcome to #{title}, future home of the best csgo retakes.
+    p Would you like to #[a( href='/auth/steam' ) login?]
