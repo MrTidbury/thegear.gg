@@ -76,3 +76,5 @@ typings/
 .fusebox/
 
 secrets.json
+
+.DS_store
