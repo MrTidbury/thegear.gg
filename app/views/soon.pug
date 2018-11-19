@@ -1,0 +1,101 @@
+doctype html
+head
+  meta(charset='utf-8')
+  link(rel='icon' type='image/png' href='images/favicon.ico')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+  title TheGearGG Retakes
+  link(href='stylesheets/bootstrap.min.css' rel='stylesheet')
+  link(href='stylesheets/paper-kit.css?v=2.1.0' rel='stylesheet')
+  // Fonts and icons
+  link(rel="stylesheet" href="https://use.fontawesome.com/7918c4ef3e.css")
+  link(href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css')
+  script(src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js')
+nav.navbar.navbar-expand-lg.fixed-top.navbar-transparent(color-on-scroll='450')
+  .container
+    .navbar-translate
+      a.navbar-brand(href='/') The Gear GG
+      button.navbar-toggler.navbar-toggler-right.navbar-burger(type='button' data-toggle='collapse' data-target='#navbarToggler' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-bar
+        span.navbar-toggler-bar
+        span.navbar-toggler-bar
+    #navbarToggler.collapse.navbar-collapse
+        if user
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='/servers', style='padding-top: 19px;') Servers
+                li.nav-item
+                    a.nav-link(href='/leaderboard', style='padding-top: 19px;') Leaderboard
+                li.nav-item
+                    a.nav-link(href='/vip', style='padding-top: 19px;') Buy Vip
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(data-toggle='dropdown' href='#pk' role='button' aria-haspopup='true' aria-expanded='false')
+                        img.img-thumbnail.img-no-padding.img-responsive(src=user.photos[2].value alt='Rounded Image' style='width: 35px;')
+                        p(style='color: #FFFFFF!important; border-color: #FFFFFF; padding-left: 5px;')  #{user.displayName}
+                        ul.dropdown-menu.dropdown-menu-right.dropdown-danger
+                            li.dropdown-header Welcome #{user.displayName}!
+                            a.dropdown-item(href='/report')
+                                i.fa.fa-thumbs-down
+                                | Report Player
+                            a.dropdown-item(href='/admin-application')
+                                i.fa.fa-gavel
+                                | Apply For Admin
+                            a.dropdown-item(href='/logout')
+                                i.fas.fa-user-alt-slash.center
+                                | Logout
+        else
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='/servers') Servers
+                li.nav-item
+                    a.nav-link(href='/leaderboard') Leaderboard
+                li.nav-item
+                    a.nav-link(href='/vip') Buy Vip
+                li.nav-item
+                    a.btn.btn-danger.btn-round(href='/auth/steam')
+                        i.fa.fa-steam
+                        |  Sign In with Steam
+.wrapper
+  .documentation.page-header(style="background-image: url('/images/bg.jpg')")
+    .filter
+    .content
+      .motto.text-center
+        h2.title-uppercase.text-center Coming Soon
+        h3.text-center Our 
+            del slaves
+            = " "
+            | developers are working on this
+        br
+        a.btn.btn-danger.btn-round(href='/') Back To Saftey
+footer.footer.footer-black
+  .container
+    .row
+      nav.footer-nav
+        ul
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-facebook-official(aria-hidden='true')
+              |  Facebook
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-twitter(aria-hidden='true')
+              |  Twitter
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-instagram(aria-hidden='true')
+              |  Instagram
+      .credits.ml-auto
+        span.copyright
+          | &copy; 
+          script.
+            document.write(new Date().getFullYear())
+          | , made with 
+          i.fa.fa-heart.heart
+          |  by Jack Tidbury
+// Core JS Files
+script(src='https://code.jquery.com/jquery-3.3.1.min.js' type='text/javascript')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js' type='text/javascript')
+script(src='js/bootstrap-switch.min.js' type='text/javascript')
+script(src='js/popper.js' type='text/javascript')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' type='text/javascript')
+// Paper Kit Initialization snd functons
+script(src='js/paper-kit.js?v=2.1.0')
